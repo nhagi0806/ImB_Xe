@@ -17,7 +17,7 @@ plt.ylabel('epsilon129(E)')
 plt.title('epsilon129(E) vs E')
 plt.grid(True)
 
-plt.scatter([9.57], [ReImB.epsilon129(9.54)])
+closest_index = np.argmin(np.abs(E_values - 9.57))
 
 plt.text(9.57, ReImB.epsilon129(9.57), f'y={ReImB.epsilon129(9.57):.3g}', ha='right', va='bottom')
 plt.savefig('asym_129Xe.png')  

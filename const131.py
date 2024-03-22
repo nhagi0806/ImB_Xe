@@ -6,7 +6,8 @@ E_1 = 3.2
 E_2 = 14.41
 E_He = -211*10**3
 
-gnGamma_0 = 2.93*10**(-3) #1 eVでの2gGamma.
+#gnGamma_0 = 2.93*10**(-3) #1 eVでの2gGamma.
+gnGamma_0 = 2.93*10**(-3)*np.sqrt(np.abs(E_0)) #|E_0|eVでの2gGamma.
 gnGamma_1 = 3.2*10**(-7) #E_1での2gGamma.
 gnGamma_2 = 2.68*10**(-1) #E_2での2gGamma.
 nGamma_He = 954.4

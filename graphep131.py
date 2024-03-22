@@ -18,8 +18,8 @@ plt.ylabel('epsilon131(E)')
 plt.title('epsilon131(E) vs E')
 plt.grid(True)
 
-plt.scatter([14.41], [ReImB.epsilon131(14.41)])
-plt.scatter([3.20], [ReImB.epsilon131(3.20)])
+closest_index = np.argmin(np.abs(E_values - 14.41))
+closest_index = np.argmin(np.abs(E_values - 3.20))
 
 plt.text(14.41, ReImB.epsilon131(14.41), f'y={ReImB.epsilon131(14.41):.3g}', ha='right', va='bottom')
 plt.text(3.20, ReImB.epsilon131(3.20), f'y={ReImB.epsilon131(3.20):.3g}', ha='right', va='bottom')
