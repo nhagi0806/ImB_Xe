@@ -90,6 +90,10 @@ def sigmaA129(E):
 def epsilon131(E):
     k = 0.6947*np.sqrt(E*10**3)*10**10
     return 0.17*np.tanh(4.2*10**(-4)*const131.num_131*const131.d_cell*(4*np.pi/k)*ImB_131Xe(E))
+
+def epsilon131_1atm(E):
+    k = 0.6947*np.sqrt(E*10**3)*10**10
+    return 0.17*np.tanh(0.1974*10**(-2)*const131.num_131_1atm*const131.d_cell*(4*np.pi/k)*ImB_131Xe(E))
  
 def epsilon129(E):
     k = 0.6947*np.sqrt(E*10**3)*10**10
