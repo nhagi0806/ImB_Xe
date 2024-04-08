@@ -4,6 +4,7 @@ import const131
 import const129
 import constHe
 import pandas as pd
+import test
 
 def Gamma129(E):
     gnGamma_0 = const129.gnGamma_0*np.sqrt(E/np.abs(const129.E_0))
@@ -103,4 +104,21 @@ def epsilon129_1atm(E):
     k = 0.6947*np.sqrt(E*10**3)*10**10
     return 0.17*np.tanh(9.0*10**(-2)*const129.num_129_1atm*const129.d_cell*(4*np.pi/k)*ImB_129Xe(E))
 
+def epsilon131pol(E):
+    k = 0.6947*np.sqrt(E*10**3)*10**10
+    return test.Poln(E)*np.tanh(4.2*10**(-4)*const131.num_131*const131.d_cell*(4*np.pi/k)*ImB_131Xe(E))
 
+def epsilon129pol(E):
+    k = 0.6947*np.sqrt(E*10**3)*10**10
+    return test.Poln(E)*np.tanh(1.9*10**(-2)*const129.num_129*const129.d_cell*(4*np.pi/k)*ImB_129Xe(E))
+
+def dsigHe(E):
+    siggma_0=5333    #barn
+    E_He=25*10**-3   #eV
+    return siggma_0*(np.sqrt(E_He)/np.sqrt(E))
+
+def Polen(E):
+    P_He = 0.655
+    rho_He = 2.686 * 10**19 * 10**6  # m^-2
+    d_He = 21.36*10**-2    # m
+    return np.tanh(P_He*rho_He*d_He*dsigHe(E))
